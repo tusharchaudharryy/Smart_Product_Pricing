@@ -1,9 +1,9 @@
+# src/config.py
 import torch
-import sys
 import os
 
 DATA_DIR = './data/'
-IMAGE_DIR = './data/images/'
+IMAGE_DIR = os.path.join(DATA_DIR, 'images')
 FEATURE_DIR = './features/'
 MODEL_DIR = './models/'
 
@@ -14,17 +14,17 @@ TEXT_MODEL_NAME = 'distilbert-base-uncased'
 IMAGE_MODEL_NAME = 'efficientnet_b0'
 IMAGE_SIZE = 224
 MAX_TEXT_LENGTH = 256
-MODEL_SAVE_PATH = f'{MODEL_DIR}/efficientnet_b0_feature_extractor.pth'
+MODEL_SAVE_PATH = os.path.join(MODEL_DIR, 'efficientnet_b0_feature_extractor.pth')
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 BATCH_SIZE = 32
-LEARNING_RATE = 5e-6 
+LEARNING_RATE = 5e-6
 EPOCHS = 15
 PATIENCE = 3
 
-BASELINE_LGBM_MODEL_PATH = f'{MODEL_DIR}/baseline_lgbm_model.joblib'
-BASELINE_FEATURES_TRAIN = f'{FEATURE_DIR}/train_baseline_features.npz'
-BASELINE_FEATURES_TEST = f'{FEATURE_DIR}/test_baseline_features.npz'
+BASELINE_LGBM_MODEL_PATH = os.path.join(MODEL_DIR, 'baseline_lgbm_model.joblib')
+BASELINE_FEATURES_TRAIN = os.path.join(FEATURE_DIR, 'train_baseline_features.npz')
+BASELINE_FEATURES_TEST = os.path.join(FEATURE_DIR, 'test_baseline_features.npz')
 
 HYBRID_LGBM_PARAMS = {
     'objective': 'regression_l1', 'metric': 'mae', 'n_estimators': 3500,
@@ -34,8 +34,10 @@ HYBRID_LGBM_PARAMS = {
     'verbose': -1, 'n_jobs': -1, 'seed': 42, 'boosting_type': 'gbdt',
 }
 HYBRID_N_SPLITS = 5
+
+# Map model architecture name -> saved deep feature model path (if you have one)
 HYBRID_MODELS_FOR_FEATURES = {
-    'efficientnet_b0': f'{MODEL_DIR}/efficientnet_b0_feature_extractor.pth'
+    'efficientnet_b0': os.path.join(MODEL_DIR, 'efficientnet_b0_feature_extractor.pth'),
 }
 
 RANDOM_STATE = 42
