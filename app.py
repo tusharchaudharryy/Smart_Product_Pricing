@@ -1,6 +1,5 @@
 import sys
 import os
-
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
@@ -386,6 +385,5 @@ async def predict(text: str = Form(...), image: UploadFile = File(...)):
 if __name__ == "__main__":
     print("Starting FastAPI server with uvicorn...")
     uvicorn.run(app, host="0.0.0.0", port=8000)
-
 
 # http://127.0.0.1:8000
