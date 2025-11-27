@@ -57,10 +57,11 @@ def download_images_from_df(df, download_folder, num_workers=16):
 
     print("Image download process complete.")
 
-
 def extract_ipq(text_series):
     if not isinstance(text_series, pd.Series):
         raise TypeError("Input must be a pandas Series.")
     ipq = text_series.str.extract(r'Item Pack Quantity:\s*(\d+)', expand=False)
     ipq = pd.to_numeric(ipq, errors='coerce').fillna(1.0)
     return ipq.values.reshape(-1, 1) 
+
+    

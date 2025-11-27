@@ -35,3 +35,5 @@ class MultimodalPricePredictor(nn.Module):
         combined_features = torch.cat([text_features, image_features, ipq.unsqueeze(1)], dim=1)
         log_price_prediction = self.regressor(combined_features)
         return log_price_prediction.squeeze(-1)
+
+        
