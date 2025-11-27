@@ -1,4 +1,4 @@
-# CS561 Project: Multimodal Product Price Prediction
+# Multimodal Product Price Prediction
 
 ## 1. Project Overview (Week 1)
 
