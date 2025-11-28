@@ -38,6 +38,7 @@ HYBRID_MODELS_FOR_FEATURES = {
     'efficientnet_b0': os.path.join(MODEL_DIR, 'efficientnet_b0_feature_extractor.pth'),
 }
 
+
 RANDOM_STATE = 42
 NUM_WORKERS = 4
 
