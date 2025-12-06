@@ -129,3 +129,4 @@ As a final deliverable, we built an interactive web application using **FastAPI*
 
 **Result:** The application sends the data to a `/predict` endpoint, processes the inputs with the model, and displays the final predicted price to the user in real-time.  
 This successfully demonstrates how the model can be deployed for practical, real-world use.
+
