@@ -1,6 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import src.config as config
@@ -28,4 +29,3 @@ else:
     print(f"New training set saved to: {config.PROJECT_TRAIN_CSV}")
     print(f"New test set saved to: {config.PROJECT_TEST_CSV}")
     print(" Data Splitting Complete ")
-

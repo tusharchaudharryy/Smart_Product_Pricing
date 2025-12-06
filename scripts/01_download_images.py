@@ -24,4 +24,3 @@ all_data_df = pd.concat([
 download_images_from_df(all_data_df, config.IMAGE_DIR)
 
 print(" Image Download Complete ")
-
