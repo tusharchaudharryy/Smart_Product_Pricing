@@ -18,7 +18,7 @@ import uvicorn
 import joblib 
 import src.config as config 
 
-TEXT_MODEL_NAME = config.TEXT_MODEL_NAME
+TEXT_MODEL_NAME = config.TEXT_MODEL_NAME 
 IMAGE_MODEL_NAME = 'efficientnet_b0' 
 IMAGE_SIZE = config.IMAGE_SIZE
 MAX_TEXT_LENGTH = config.MAX_TEXT_LENGTH
