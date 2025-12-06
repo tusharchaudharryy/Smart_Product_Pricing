@@ -12,7 +12,6 @@ from scipy.sparse import hstack, csr_matrix
 from src.utils import smape
 import src.config as config
 
-
 FEATURE_DIR = config.FEATURE_DIR
 MODEL_DIR = config.MODEL_DIR
 TRAIN_CSV = config.PROJECT_TRAIN_CSV

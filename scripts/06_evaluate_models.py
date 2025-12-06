@@ -10,7 +10,6 @@ import joblib
 from scipy.sparse import load_npz, hstack, csr_matrix
 from tqdm import tqdm
 from torch.utils.data import DataLoader
-
 from src.dataset import MultimodalDataset, get_tokenizer, image_transform
 from src.model import MultimodalPricePredictor
 from src.utils import smape, mae, rmse, r_squared
